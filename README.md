@@ -28,4 +28,4 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Hat tip to the Microverse community, @microverseinc for their tutorship and supervision.
 
 ## 📝 License
-This project is [MIT]('./license') licensed.
+This project is [MIT]('./LICENSE') licensed.
