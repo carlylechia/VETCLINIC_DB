@@ -12,7 +12,7 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## Authors
 
-👤 **Author1**
+👤 **Chia Carlyle**
 
 - GitHub: [@carlylechia](https://github.com/carlylechia)
 - Twitter: [@chiacarlyle](https://twitter.com/chiacarlyle)
