@@ -98,7 +98,7 @@ SELECT species.name AS expected_specialty FROM animals JOIN visits ON animals.id
 --  Digimon
 
 EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
--- Finalize Aggregate  (cost=170348.29..170348.30 rows=1 width=8) (actual time=1000.501..1003.884 rows=1 loops=1)
+-- Finalize Aggregate  (cost=170348.29..170348.30 rows=1 width=8) (actual time=2030.501..1003.884 rows=1 loops=1)
 --    ->  Gather  (cost=170348.08..170348.29 rows=2 width=8) (actual time=1000.251..1003.862 rows=3 loops=1)
 --          Workers Planned: 2
 --          Workers Launched: 2
@@ -108,3 +108,15 @@ EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
 --                      Rows Removed by Filter: 4792380
 --  Planning Time: 0.070 ms
 --  Execution Time: 1003.925 ms
+
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+Finalize Aggregate  (cost=24619.63..24619.64 rows=1 width=8) (actual time=195.664..197.828 rows=1 loops=1)
+   ->  Gather  (cost=24619.42..24619.62 rows=2 width=8) (actual time=195.527..197.819 rows=3 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         ->  Partial Aggregate  (cost=23619.42..23619.42 rows=1 width=8) (actual time=186.518..186.518 rows=1 loops=3)
+               ->  Parallel Index Only Scan using idx_animal_id on visits  (cost=0.43..22090.65 rows=611508 width=0) (actual time=0.155..121.198 rows=479238 loops=3)
+                     Index Cond: (animal_id = 4)
+                     Heap Fetches: 0
+ Planning Time: 0.280 ms
+ Execution Time: 197.920 ms
