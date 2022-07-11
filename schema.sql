@@ -17,3 +17,4 @@ CREATE TABLE specializations(vet_id INT, species_id INT, FOREIGN KEY(vet_id) REF
 CREATE TABLE visits(animal_id integer, vet_id integer, visit_date date, FOREIGN KEY(animal_id) REFERENCES animals(id), FOREIGN KEY(vet_id) REFERENCES vets(id));
 
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+CREATE INDEX idx_animal_id ON visits(animal_id);
