@@ -18,6 +18,12 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Twitter: [@chiacarlyle](https://twitter.com/chiacarlyle)
 - LinkedIn: [chia-carlyle](https://linkedin.com/in/chia-carlyle)
 
+👤 **Frankline Osoro**
+
+- GitHub: [@frank1738](https://github.com/frank1738)
+- Twitter: [@frankhiggins08](https://twitter.com/frankhiggins08)
+- LinkedIn: [Frankline Osoro](http://www.linkedin.com/in/frankline-osoro-b526ba18b)
+
 
 ## 🤝 Contributing
 
