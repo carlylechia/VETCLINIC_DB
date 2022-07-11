@@ -96,3 +96,15 @@ SELECT species.name AS expected_specialty FROM animals JOIN visits ON animals.id
 --  expected_specialty 
 -- --------------------
 --  Digimon
+
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animal_id = 4;
+-- Finalize Aggregate  (cost=170348.29..170348.30 rows=1 width=8) (actual time=1000.501..1003.884 rows=1 loops=1)
+--    ->  Gather  (cost=170348.08..170348.29 rows=2 width=8) (actual time=1000.251..1003.862 rows=3 loops=1)
+--          Workers Planned: 2
+--          Workers Launched: 2
+--          ->  Partial Aggregate  (cost=169348.08..169348.09 rows=1 width=8) (actual time=981.041..981.043 rows=1 loops=3)
+--                ->  Parallel Seq Scan on visits  (cost=0.00..167854.46 rows=597446 width=0) (actual time=0.082..917.412 rows=479238 loops=3)
+--                      Filter: (animal_id = 4)
+--                      Rows Removed by Filter: 4792380
+--  Planning Time: 0.070 ms
+--  Execution Time: 1003.925 ms
