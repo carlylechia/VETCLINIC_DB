@@ -15,3 +15,8 @@ ALTER TABLE animals ADD CONSTRAINT FK_animalowners FOREIGN KEY(owner_id) REFEREN
 CREATE TABLE vets(id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY, name VARCHAR(100), age INT, date_of_graduation date);
 CREATE TABLE specializations(vet_id INT, species_id INT, FOREIGN KEY(vet_id) REFERENCES vets(id), FOREIGN KEY(species_id) REFERENCES species(id));
 CREATE TABLE visits(animal_id integer, vet_id integer, visit_date date, FOREIGN KEY(animal_id) REFERENCES animals(id), FOREIGN KEY(vet_id) REFERENCES vets(id));
+
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+CREATE INDEX idx_animal_id ON visits(animal_id);
+CREATE INDEX idx_vet_id ON visits (vet_id ASC);
+CREATE INDEX idx_email ON owners (email);
