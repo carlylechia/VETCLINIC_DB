@@ -9,6 +9,7 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - [data.sql](./data.sql) contains sample data used to populate the tables.
 - Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
 
+![](https://github.com/carlylechia/VETCLINIC_DB/blob/feature/vet-clinic.png?raw=true)
 
 ## Authors
 
